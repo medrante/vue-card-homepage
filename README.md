@@ -1,4 +1,4 @@
-# spotfire-tools
+# vue-card-homepage
 
 ## Project setup
 ```
