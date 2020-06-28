@@ -19,7 +19,7 @@
 export default {
   name: "Cards",
   props: {
-    tools: []
+    tools: Array
   },
   methods: {
     goTo(link) {

@@ -2,13 +2,13 @@
   <v-app>
     <AppNavigation />
     <Cards :tools="tools" />
+    <!-- <p>{{ tools }}</p> -->
   </v-app>
 </template>
 
 <script>
 import AppNavigation from "./components/AppNavigation";
 import Cards from "./components/Cards";
-import axios from "axios";
 
 export default {
   name: "App",
@@ -31,9 +31,10 @@ export default {
   methods: {
     async getTools() {
       try {
-        const response = await axios("./card-data.json");
-        this.tools = await response.data;
-        console.log(this.tools);
+        const res = await fetch("./card-data.json");
+        const data = await res.json();
+        console.log(data);
+        this.tools = data;
       } catch (e) {
         console.log(e);
       }
